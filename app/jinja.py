@@ -1,7 +1,7 @@
 from jinja2 import FileSystemLoader, Environment
 
-loder = FileSystemLoader('templates')
-env = Environment(loader=loder)
+loader = FileSystemLoader('templates')
+env = Environment(loader=loader)
 template = env.get_template('index.html')
 
 file = open('output/index.html', 'w')

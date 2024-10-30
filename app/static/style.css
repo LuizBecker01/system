@@ -4,6 +4,5 @@
 }
 
 body{
-    background-color: {{ background_color }};
-    color: {{ text_color }};
+    background-color: purple;
 }

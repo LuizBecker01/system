@@ -1,19 +1,9 @@
-import psycopg2
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
 
-connection = psycopg2.connect(
-    host="localhost",
-    database="system",
-    user="postgres",
-    password="2404"
-)
+DATABASE_URL = "postgresql://postgres:2404@localhost:5432/system"
 
-cursor = connection.cursor()
-
-cursor.execute("SELECT * FROM status")
-
-status = cursor.fetchall()
-
-print(status)
-
-cursor.close()
-connection.close()
+engine = create_engine(DATABASE_URL)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+Base = declarative_base()

@@ -1,9 +1,6 @@
-from app.connection import engine,Base
-from app import models
-from app import app
+from app import create_app, db
 
-#Cria as ta belas do banco
-Base.metadata.create_all(bind=engine)
+app = create_app()
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8001, debug=True)

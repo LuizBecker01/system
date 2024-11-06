@@ -1,4 +1,3 @@
-# app/main.py
 from flask import Blueprint, render_template, jsonify, request
 from . import db
 from datetime import datetime

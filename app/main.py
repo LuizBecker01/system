@@ -31,7 +31,7 @@ def index():
 @main.route('/add_status', methods=['POST'])
 def add_status():
     name = request.form.get('name')
-    status_value = request.form.get('status').lower() in ['true', '1', 'yes']  # Verifica se o valor do campo 'status' é 'true'
+    status_value = request.form.get('status').lower() in ['true', '1', 'yes']  # Verifica se o valor do campo 'status' é 'true'cls
     novo_status = Status(name=name, status=status_value)
     db.session.add(novo_status)
     db.session.commit()

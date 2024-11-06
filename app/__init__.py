@@ -11,6 +11,3 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Associando o objeto 'app' aos modelos e engine
 Base.metadata.bind = engine
-
-# Defina suas rotas aqui
-from app import routes

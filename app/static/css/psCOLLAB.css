@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+page-template{
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.spaced-item{
+    margin-right: 2rem;
+}
+
+button.navbar-toggler{
+    font-size: var(--bs-navbar-toggler-font-size);
+    line-height: 1;
+    color: var(--bs-navbar-color);
+    background-color: transparent;
+    border-radius: var(--bs-navbar-toggler-border-radius);
+    transition: var(--bs-navbar-toggler-transition);
+    border: var(--bs-navbar-toggler-border-width) solid var(--bs-navbar-toggler-border-color);       
+}
+
+.main_container{
+    padding: 20px;
+    height: 92vh;
+    width: 100vw;
+    display: flex;
+    background-image: linear-gradient(45deg, #2e0854, #4b0082, #6a0dad, #7b1fa2);
+}

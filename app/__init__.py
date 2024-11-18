@@ -1,13 +1,22 @@
 from flask import Flask
-from app.connection import engine
-from app.models import Base 
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
-# Criação do objeto Flask
-app = Flask(__name__)
+# Inicializa o SQLAlchemy
+db = SQLAlchemy()
 
-# Configurações de banco de dados
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:2404@localhost:5432/system"
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+def create_app():
+    app = Flask(__name__)
 
-# Associando o objeto 'app' aos modelos e engine
-Base.metadata.bind = engine
+    # Configurações de banco de dados
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:luiz@localhost:5432/system'
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+    # Inicializa o SQLAlchemy com o app
+    db.init_app(app)
+
+    # Importa e registra o blueprint
+    from .main import main as main_blueprint
+    app.register_blueprint(main_blueprint)
+
+    return app

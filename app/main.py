@@ -31,3 +31,8 @@ def pscolleb():
 @main.route('/OEE')
 def oee():
     return render_template('OEE.html')
+
+# Rota mhMonitoramento
+@main.route('/mhMonitoramento')
+def mhmonitoramento():
+    return render_template('mhMonitoramento.html')

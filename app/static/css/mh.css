@@ -30,3 +30,40 @@ button.navbar-toggler{
     display: flex;
     background-image: linear-gradient(45deg, #2e0854, #4b0082, #6a0dad, #7b1fa2);
 }
+
+.button-container {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.custom-button {
+    height: 80px;
+    width: 245px;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color:#4b0082;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+.button-icon {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.button-text {
+    font-size: 23px;
+    font-weight: bold;
+}

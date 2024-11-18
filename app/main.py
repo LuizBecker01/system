@@ -36,3 +36,13 @@ def oee():
 @main.route('/mhMonitoramento')
 def mhmonitoramento():
     return render_template('mhMonitoramento.html')
+
+# Rota psMonitoramento
+@main.route('/psMonitoramento')
+def psmonitoramento():
+    return render_template('psMonitoramento.html')
+
+# Rota OEEMonitoramento
+@main.route('/OEEMonitoramento')    
+def oeeMonitoramento():
+    return render_template('OEEMonitoramento.html')

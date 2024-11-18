@@ -67,3 +67,11 @@ button.navbar-toggler{
     font-size: 23px;
     font-weight: bold;
 }
+
+.custom-btn {
+    --bs-btn-color: #7b2cbf;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #7b2cbf;
+    --bs-btn-hover-border-color: #7b2cbf;
+    --bs-btn-active-bg: #5a189a;
+}

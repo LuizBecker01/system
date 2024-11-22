@@ -1,0 +1,11 @@
+[
+    {
+        "name": "Sensor 1",
+        "status": null,
+        "detalhes_staus":{
+            "connected": true,
+            "disconnected": false
+        },
+        "timestamp": "2022-05-05T00:00:00.000Z"
+    }
+]

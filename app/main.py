@@ -1,6 +1,8 @@
 from flask import Blueprint, render_template, jsonify, request
 from . import db
 from datetime import datetime
+import json
+import os
 
 main = Blueprint('main', __name__)
 
@@ -35,7 +37,17 @@ def oee():
 # Rota mhMonitoramento
 @main.route('/mhMonitoramento')
 def mhmonitoramento():
-    return render_template('mhMonitoramento.html')
+    try:
+        # Carregar dados do arquivo JSON
+        caminho_arquivo = os.path.join(os.getcwd(), 'app', 'status.json')
+        with open(caminho_arquivo, 'r') as arquivo:
+            dados = json.load(arquivo)
+        
+        # Passar os dados para o template
+        return render_template('mhMonitoramento.html', dados=dados)
+    
+    except Exception as e:
+        return jsonify({"erro": f"Erro ao carregar os dados: {str(e)}"})
 
 # Rota psMonitoramento
 @main.route('/psMonitoramento')

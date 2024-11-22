@@ -7,41 +7,55 @@
     <link rel="stylesheet" href="/static/css/mh.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/static/js/script.js"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}" defer></script> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
     <title>Floki Sys - mhMonitoramento</title>
 </head>
 <body class="page-template">
     <header>
-      <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
-        <div class="bg-dark p-4 d-flex align-items-center justify-content-between">
-          <h5 id="title" class="text-body-emphasis h4 spaced-item">The future is <b>now</b>!</h5>
-          <div class="d-flex align-items-center">
-            <span class="text-body-secondary spaced-item">
-              <a href="/mhCOLLAB" class="text-body-secondary" style="text-decoration: none;">mhCOLLAB</a>
-            </span>
-            <span class="text-body-secondary spaced-item">
-              <a href="/psCOLLAB" class="text-body-secondary" style="text-decoration: none;">psCOLLAB</a>
-            </span>
-            <span class="text-body-secondary spaced-item">
-              <a href="/OEE" class="text-body-secondary" style="text-decoration: none;">OEE</a>
-            </span>
-            <a href="/" class="btn custom-btn">Home</a>
-          </div>
+        <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
+            <div class="bg-dark p-4 d-flex align-items-center justify-content-between">
+                <h5 id="title" class="text-body-emphasis h4 spaced-item">The future is <b>now</b>!</h5>
+                <div class="d-flex align-items-center">
+                    <span class="text-body-secondary spaced-item">
+                        <a href="/mhCOLLAB" class="text-body-secondary" style="text-decoration: none;">mhCOLLAB</a>
+                    </span>
+                    <span class="text-body-secondary spaced-item">
+                        <a href="/psCOLLAB" class="text-body-secondary" style="text-decoration: none;">psCOLLAB</a>
+                    </span>
+                    <span class="text-body-secondary spaced-item">
+                        <a href="/OEE" class="text-body-secondary" style="text-decoration: none;">OEE</a>
+                    </span>
+                    <a href="/" class="btn custom-btn">Home</a>
+                </div>
+            </div>
         </div>
-      </div>
-      <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <img src="/static/images/logo.jpeg" alt="" height="50" width="50">
-            </button>
-          </div>
-      </nav>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <img src="/static/images/logo.jpeg" alt="" height="50" width="50">
+                </button>
+            </div>
+        </nav>
     </header>
     <main class="main_container">
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h1>Monitoramento</h1>
+                    <h1 class="title-mh">Dados do JSON</h1>
+
+                    <canvas id="grafico" class="grafico" width="300" height="100"></canvas>
+
+                    <div id="dados-container">
+                        <h3 class="title-mh">Dados de Status:</h3>
+                        <ul>
+                            {% for item in dados %}
+                                <li>Status: {{ item.status }}, Timestamp: {{ item.timestamp }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

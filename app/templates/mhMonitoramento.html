@@ -45,17 +45,16 @@
             <div class="row">
                 <div class="col">
                     <h1 class="title-mh">Dados do JSON</h1>
-
-                    <canvas id="grafico" class="grafico" width="300" height="100"></canvas>
-
-                    <div id="dados-container">
-                        <h3 class="title-mh">Dados de Status:</h3>
-                        <ul>
-                            {% for item in dados %}
-                                <li>Status: {{ item.status }}, Timestamp: {{ item.timestamp }}</li>
-                            {% endfor %}
-                        </ul>
-                    </div>
+                    <canvas id="graficoMh" width="800" height="350">
+                        <div id="dados-container">
+                            <h3 class="title-mh">Dados de Status:</h3>
+                            <ul>
+                                {% for item in dados %}
+                                    <li>Status: {{ item.status }}, Timestamp: {{ item.timestamp }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </canvas>
                 </div>
             </div>
         </div>

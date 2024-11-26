@@ -3,12 +3,10 @@ const objs = [
   {
     "name": "Sensor 1",
     "status": true,
-    "timestamp": "2022-05-05T00:00:00.000Z"
   },
   {
     "name": "Sensor 2",
     "status": false,
-    "timestamp": "2022-05-05T00:00:00.000Z"
   },
 ];
 

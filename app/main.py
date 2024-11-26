@@ -3,6 +3,8 @@ from . import db
 from datetime import datetime
 import json
 import os
+from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.events import EVENT_JOB_EXECUTED, EVENT_JOB_ERROR
 
 main = Blueprint('main', __name__)
 
@@ -13,6 +15,23 @@ class Status(db.Model):
     name = db.Column(db.String, nullable=False)
     status = db.Column(db.Boolean, nullable=False)
     timestamp = db.Column(db.DateTime(timezone=True), default=datetime.utcnow)
+
+# Função para atualizar o status e timestamp
+def atualizar_status():
+    try:
+        status_atualizado = Status.query.all()
+        for status in status_atualizado:
+            status.status = True  # Alterar o status conforme necessário
+            status.timestamp = datetime.now()
+            db.session.commit()
+        print("Status atualizado com sucesso!")
+    except Exception as e:
+        print(f"Erro ao atualizar status: {str(e)}")
+
+# Inicializando o agendador
+scheduler = BackgroundScheduler()
+scheduler.add_job(func=atualizar_status, trigger="interval", minutes=5)
+scheduler.start()
 
 # Rota principal
 @main.route('/')

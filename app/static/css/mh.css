@@ -26,7 +26,7 @@ button.navbar-toggler{
 .main_container{
     padding: 20px;
     height: 92vh;
-    width: 100vw;
+    width: 98.9vw;
     display: flex;
     background-image: linear-gradient(45deg, #2e0854, #4b0082, #6a0dad, #7b1fa2);
 }

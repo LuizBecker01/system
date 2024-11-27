@@ -10,5 +10,5 @@ const objs = [
     },
   ];
   
-  // Gráfico
+// Gráfico
  

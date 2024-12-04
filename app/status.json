@@ -1,4 +1,5 @@
 [
+<<<<<<< HEAD
     {
         "name": "Sensor 1",
         "status": true
@@ -8,4 +9,10 @@
         "status": true
     }
 
+=======
+    [
+        {"id": 1, "name": "Sensor 1", "status": true},
+        {"id": 2, "name": "Sensor 2", "status": false}
+    ]
+>>>>>>> 121eee77d9861cd67ce637b513c9ba0e9580ba08
 ]

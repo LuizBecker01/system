@@ -63,7 +63,7 @@ def oee():
 def mhmonitoramento():
     try:
         caminho_arquivo = os.path.join(os.getcwd(), 'app', 'status.json')
-        with open(caminho_arquivo, 'r', encoding='utf-8') as arquivo:  # Certifique-se de usar 'utf-8'
+        with open(caminho_arquivo, 'r', encoding='utf-8') as arquivo:
             dados = json.load(arquivo)
         
         return render_template('mhMonitoramento.html', dados=dados)

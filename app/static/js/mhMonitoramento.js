@@ -1,10 +1,9 @@
 // JSON
 const objs = [
   { name: "Sensor 1", status: true },
-  { name: "Sensor 2", status: false },
 ];
 
-// Função para gerar timestamps de 5 em 5 minutos
+// Função para gerar timestamps
 function generateTimestamps(start, end, interval) {
   const timestamps = [];
   let current = new Date(start);
@@ -29,8 +28,8 @@ const yValues = timestamps.map((_, index) => (index % 2 === 0 ? 1 : 0));
 
 // Gráfico
 var trace1 = {
-  x: timestamps, // Usar os timestamps gerados no eixo x
-  y: yValues, // Usar valores alternados no eixo y
+  x: timestamps, // Usa os timestamps gerados no eixo x
+  y: yValues, // Usa os valores alternados no eixo y
   mode: "lines+markers",
   name: "Status dos Sensores",
   line: { shape: "hv" },
@@ -40,9 +39,9 @@ var trace1 = {
 var data = [trace1];
 
 var layout = {
-  title: "Gráfico com Timestamps de 5 em 5 Minutos",
+  title: "Gráfico",
   xaxis: {
-    title: "Horário",
+    title: "Data e Hora",
     type: "date", // Especifica que o eixo x é baseado em datas
   },
   yaxis: {
